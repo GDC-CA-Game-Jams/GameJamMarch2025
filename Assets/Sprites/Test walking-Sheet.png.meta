@@ -88,7 +88,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -126,7 +126,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -169,7 +169,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 26
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -189,9 +189,9 @@ TextureImporter:
       name: Test walking-Sheet_1
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 0
-        width: 29
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -211,9 +211,9 @@ TextureImporter:
       name: Test walking-Sheet_2
       rect:
         serializedVersion: 2
-        x: 66
+        x: 64
         y: 0
-        width: 27
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -233,9 +233,9 @@ TextureImporter:
       name: Test walking-Sheet_3
       rect:
         serializedVersion: 2
-        x: 95
+        x: 96
         y: 0
-        width: 29
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -255,9 +255,9 @@ TextureImporter:
       name: Test walking-Sheet_4
       rect:
         serializedVersion: 2
-        x: 127
+        x: 128
         y: 0
-        width: 29
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -277,9 +277,9 @@ TextureImporter:
       name: Test walking-Sheet_5
       rect:
         serializedVersion: 2
-        x: 162
+        x: 160
         y: 0
-        width: 27
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -299,9 +299,9 @@ TextureImporter:
       name: Test walking-Sheet_6
       rect:
         serializedVersion: 2
-        x: 194
+        x: 192
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -321,9 +321,9 @@ TextureImporter:
       name: Test walking-Sheet_7
       rect:
         serializedVersion: 2
-        x: 226
+        x: 224
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -343,9 +343,9 @@ TextureImporter:
       name: Test walking-Sheet_8
       rect:
         serializedVersion: 2
-        x: 258
+        x: 256
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -365,9 +365,9 @@ TextureImporter:
       name: Test walking-Sheet_9
       rect:
         serializedVersion: 2
-        x: 290
+        x: 288
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -387,9 +387,9 @@ TextureImporter:
       name: Test walking-Sheet_10
       rect:
         serializedVersion: 2
-        x: 322
+        x: 320
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -409,9 +409,9 @@ TextureImporter:
       name: Test walking-Sheet_11
       rect:
         serializedVersion: 2
-        x: 354
+        x: 352
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -431,9 +431,9 @@ TextureImporter:
       name: Test walking-Sheet_12
       rect:
         serializedVersion: 2
-        x: 386
+        x: 384
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -453,9 +453,9 @@ TextureImporter:
       name: Test walking-Sheet_13
       rect:
         serializedVersion: 2
-        x: 418
+        x: 416
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -475,9 +475,9 @@ TextureImporter:
       name: Test walking-Sheet_14
       rect:
         serializedVersion: 2
-        x: 450
+        x: 448
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -497,9 +497,9 @@ TextureImporter:
       name: Test walking-Sheet_15
       rect:
         serializedVersion: 2
-        x: 482
+        x: 480
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -519,9 +519,9 @@ TextureImporter:
       name: Test walking-Sheet_16
       rect:
         serializedVersion: 2
-        x: 514
+        x: 512
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -541,9 +541,9 @@ TextureImporter:
       name: Test walking-Sheet_17
       rect:
         serializedVersion: 2
-        x: 546
+        x: 544
         y: 0
-        width: 28
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -563,7 +563,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 354189056ca3f5f448250386c81f303d
     internalID: 0
     vertices: []
     indices: 
@@ -572,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Test walking-Sheet_0: -4753804621351290565
+      Test walking-Sheet_1: -6615764525297407961
+      Test walking-Sheet_10: 1568402082647449427
+      Test walking-Sheet_11: -8707318852344195742
+      Test walking-Sheet_12: -6112350606399103448
+      Test walking-Sheet_13: -4501986055136623723
+      Test walking-Sheet_14: -2186834247420590486
+      Test walking-Sheet_15: 2338912122475128239
+      Test walking-Sheet_16: -5887232360373250904
+      Test walking-Sheet_17: -3217682946710574350
+      Test walking-Sheet_2: 2306062276015598628
+      Test walking-Sheet_3: 788037906485503449
+      Test walking-Sheet_4: 6833758149696248666
+      Test walking-Sheet_5: 3798938476950194962
+      Test walking-Sheet_6: -2172159480228239974
+      Test walking-Sheet_7: 5736094161246324919
+      Test walking-Sheet_8: 1094070839979348853
+      Test walking-Sheet_9: 6376175627204284625
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

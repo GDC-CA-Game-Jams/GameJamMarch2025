@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,7 +130,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 17
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -138,9 +138,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1842bcad4903579c0800000000000000
+      spriteID: 6846593ec163ec24aa7a71ce088eb581
       internalID: -3930181683926850431
       vertices: []
       indices: 
@@ -150,9 +150,9 @@ TextureImporter:
       name: onion-Sheet_1
       rect:
         serializedVersion: 2
-        x: 15
+        x: 16
         y: 0
-        width: 18
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,9 +160,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 96484ff9821b08a30800000000000000
+      spriteID: d05c80c1b85553c4d97ba7c74650ca1b
       internalID: 4215564039259194473
       vertices: []
       indices: 
@@ -172,9 +172,9 @@ TextureImporter:
       name: onion-Sheet_2
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 0
-        width: 18
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -182,9 +182,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7cb5aa3da54552ad0800000000000000
+      spriteID: 3b4db6dccb4fc58438dc348f710c2e5d
       internalID: -2727681250228020281
       vertices: []
       indices: 
@@ -194,9 +194,9 @@ TextureImporter:
       name: onion-Sheet_3
       rect:
         serializedVersion: 2
-        x: 47
+        x: 48
         y: 0
-        width: 18
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -204,9 +204,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a25360e9f6061af80800000000000000
+      spriteID: cc40b7efcd9d68742920050c75e9649e
       internalID: -8097084622526597846
       vertices: []
       indices: 
@@ -216,9 +216,9 @@ TextureImporter:
       name: onion-Sheet_4
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 0
-        width: 17
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,9 +226,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7095cc2821003cc60800000000000000
+      spriteID: dde780a3d5070e44082778f879e32579
       internalID: 7837107856058636551
       vertices: []
       indices: 
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8a850b58ce73f2e45b1c4627219f17f1
     internalID: 0
     vertices: []
     indices: 
@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      onion-Sheet_0: -3930181683926850431
+      onion-Sheet_1: 4215564039259194473
+      onion-Sheet_2: -2727681250228020281
+      onion-Sheet_3: -8097084622526597846
+      onion-Sheet_4: 7837107856058636551
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,7 +130,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 17
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -138,9 +138,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 17865293b2bf5d270800000000000000
+      spriteID: 596da991ffed08649b935fc4ef21f5b0
       internalID: 8274796053424072817
       vertices: []
       indices: 
@@ -150,9 +150,9 @@ TextureImporter:
       name: Uncooked Meat-Sheet_1
       rect:
         serializedVersion: 2
-        x: 15
+        x: 16
         y: 0
-        width: 18
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,9 +160,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a431140e51f52dba0800000000000000
+      spriteID: 7a7b25c93659b854e91186e09de1104c
       internalID: -6065681200553323702
       vertices: []
       indices: 
@@ -172,9 +172,9 @@ TextureImporter:
       name: Uncooked Meat-Sheet_2
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 0
-        width: 18
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -182,9 +182,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3f13e153d8636f8c0800000000000000
+      spriteID: ed3c207dc41fa8747b810b591344b65e
       internalID: -3965922441743683085
       vertices: []
       indices: 
@@ -194,9 +194,9 @@ TextureImporter:
       name: Uncooked Meat-Sheet_3
       rect:
         serializedVersion: 2
-        x: 47
+        x: 48
         y: 0
-        width: 18
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -204,9 +204,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ac8d8de6063291000800000000000000
+      spriteID: 20edf70864475ef4a9f68d6d0a04bbcf
       internalID: 7075771501304010
       vertices: []
       indices: 
@@ -216,9 +216,9 @@ TextureImporter:
       name: Uncooked Meat-Sheet_4
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 0
-        width: 17
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,9 +226,9 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: eee5e6bfcd6494e00800000000000000
+      spriteID: cc2fc31708703d34d8e46c3475be718c
       internalID: 1029431904755932910
       vertices: []
       indices: 
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0169f94a1fdf58246a4e51c0071a9152
     internalID: 0
     vertices: []
     indices: 
@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Uncooked Meat-Sheet_0: 8274796053424072817
+      Uncooked Meat-Sheet_1: -6065681200553323702
+      Uncooked Meat-Sheet_2: -3965922441743683085
+      Uncooked Meat-Sheet_3: 7075771501304010
+      Uncooked Meat-Sheet_4: 1029431904755932910
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
