@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 60cbaff0300f28244a8a667f8ad54430
+guid: be4d39e04e9af2f4bb253f0ec9b11353
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4927284473484829774
-    second: carrot-Sheet_0
+      213: -3280069162980399715
+    second: Cooking-Sheet_0
+  - first:
+      213: 900796671704488429
+    second: Cooking-Sheet_1
+  - first:
+      213: -7296960031758957278
+    second: Cooking-Sheet_2
+  - first:
+      213: -7629307226740701454
+    second: Cooking-Sheet_3
+  - first:
+      213: -6481299025818039995
+    second: Cooking-Sheet_4
+  - first:
+      213: 8167749991979029675
+    second: Cooking-Sheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: carrot-Sheet_0
+      name: Cooking-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 16
-        height: 16
+        width: 28
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,96 +143,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e446c5d6f1b316440800000000000000
-      internalID: 4927284473484829774
+      spriteID: d9527dd897ada72d0800000000000000
+      internalID: -3280069162980399715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: carrot-Sheet_1
+      name: Cooking-Sheet_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 33
         y: 0
-        width: 16
-        height: 16
+        width: 29
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: dbc56dfe8b6af604f81ed3b90f4f8a47
-      internalID: -1105583798
+      spriteID: de9dccfdcc5408c00800000000000000
+      internalID: 900796671704488429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: carrot-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d04a562b09913174ebe52490de44a65f
-      internalID: -1185674510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: carrot-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2cba0d8b0704314c9203e9b1ff3682d
-      internalID: 1298471066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: carrot-Sheet_4
+      name: Cooking-Sheet_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 16
-        height: 16
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 02d4fb2b5ac64684194389b4ef4c6cf2
-      internalID: 600260078
+      spriteID: 225c8c6138dfbba90800000000000000
+      internalID: -7296960031758957278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cooking-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 0
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f6ccc3cf714f1690800000000000000
+      internalID: -7629307226740701454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cooking-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549c70b10eccd06a0800000000000000
+      internalID: -6481299025818039995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cooking-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 0
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba41c16d75da95170800000000000000
+      internalID: 8167749991979029675
       vertices: []
       indices: 
       edges: []
@@ -226,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 835643eafb7e0834db4d6d9a0eec4624
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -235,12 +272,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      carrot-Sheet_0: 4927284473484829774
-      carrot-Sheet_1: -1105583798
-      carrot-Sheet_2: -1185674510
-      carrot-Sheet_3: 1298471066
-      carrot-Sheet_4: 600260078
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
