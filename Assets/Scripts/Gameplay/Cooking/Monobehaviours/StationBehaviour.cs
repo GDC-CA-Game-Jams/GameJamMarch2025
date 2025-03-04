@@ -1,4 +1,5 @@
-﻿using Gameplay.Cooking.ScriptableObjects;
+﻿using System;
+using Gameplay.Cooking.ScriptableObjects;
 using UnityEngine;
 using Util;
 using Util.Services;
@@ -12,7 +13,9 @@ namespace Gameplay.Cooking.Monobehaviours
         private EventService es;
 
         private string id = "";
-        
+
+        public StationObject StationData => stationData;
+
         private void Start()
         {
             es = ServicesLocator.Instance.Get<EventService>();
@@ -28,6 +31,13 @@ namespace Gameplay.Cooking.Monobehaviours
             }
             this.id = id;
         }
-        
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                es.Raise(EventNames.STATION_ACTIVATED_EVENT, this, new StationActivationEventArgs(id));
+            }
+        }
     }
 }

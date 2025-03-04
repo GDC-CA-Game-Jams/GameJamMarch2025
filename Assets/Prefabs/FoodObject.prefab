@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3122855299708223288
+--- !u!1 &509838410321130542
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6545232341102705826}
-  - component: {fileID: 8668060297426595236}
-  - component: {fileID: 5258170634925179981}
-  - component: {fileID: 2333182636784868225}
+  - component: {fileID: 8962741378685893901}
+  - component: {fileID: 8938888827365476527}
+  - component: {fileID: 554207701714095915}
+  - component: {fileID: 4580405001190634720}
   m_Layer: 0
-  m_Name: Station
+  m_Name: FoodObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6545232341102705826
+--- !u!4 &8962741378685893901
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122855299708223288}
+  m_GameObject: {fileID: 509838410321130542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,13 +34,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8668060297426595236
+--- !u!212 &8938888827365476527
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122855299708223288}
+  m_GameObject: {fileID: 509838410321130542}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -78,37 +78,38 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7629307226740701454, guid: be4d39e04e9af2f4bb253f0ec9b11353, type: 3}
+  m_Sprite: {fileID: 4927284473484829774, guid: 60cbaff0300f28244a8a667f8ad54430, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5258170634925179981
+--- !u!114 &554207701714095915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122855299708223288}
+  m_GameObject: {fileID: 509838410321130542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9cd06af7c284882b283060a9cfc0a81, type: 3}
+  m_Script: {fileID: 11500000, guid: 0db4bbbf6bd248a4a79b898871b48626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationData: {fileID: 0}
---- !u!58 &2333182636784868225
+  foodData: {fileID: 0}
+  sr: {fileID: 8938888827365476527}
+--- !u!58 &4580405001190634720
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122855299708223288}
+  m_GameObject: {fileID: 509838410321130542}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -137,4 +138,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.25
+  m_Radius: 0.08

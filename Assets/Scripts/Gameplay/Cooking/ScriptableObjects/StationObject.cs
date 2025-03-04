@@ -8,7 +8,9 @@ namespace Gameplay.Cooking.ScriptableObjects
     [CreateAssetMenu(fileName = "CookingStation", menuName = "Scriptable Objects/CookingStation")]
     public class StationObject : ScriptableObject
     {
-        [Tooltip("Food the cooking station accepts")]
-        [SerializeField] private FoodObject[] accepts;
+        [Tooltip("Recipes the cooking station can cook")]
+        [SerializeField] private RecipeObject[] recipes;
+
+        public RecipeObject[] Recipes => recipes;
     }
 }

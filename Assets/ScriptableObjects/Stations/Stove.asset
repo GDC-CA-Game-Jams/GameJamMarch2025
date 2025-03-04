@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfe67da4d4ac804ab8e4b40c4124a13, type: 3}
   m_Name: Stove
   m_EditorClassIdentifier: 
-  accepts: []
+  recipes:
+  - {fileID: 11400000, guid: 8e2c9802699d41c4b94b5e7636aea318, type: 2}

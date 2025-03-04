@@ -8,6 +8,6 @@ namespace Gameplay.Cooking.ScriptableObjects
     [CreateAssetMenu(fileName = "FoodObject", menuName = "Scriptable Objects/FoodObject")]
     public class FoodObject : ScriptableObject
     {
-
+        public Sprite sprite;
     }
 }

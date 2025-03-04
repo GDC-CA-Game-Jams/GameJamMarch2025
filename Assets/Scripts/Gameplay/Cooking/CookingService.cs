@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Gameplay.Cooking.Monobehaviours;
+using Gameplay.Cooking.ScriptableObjects;
+using Gameplay.Inventory;
 using UnityEngine;
 using Util;
 using Util.Services;
@@ -16,6 +18,8 @@ namespace Gameplay.Cooking
         
         private EventService es;
 
+        private InventoryService invService;
+        
         private Dictionary<String, StationBehaviour> registeredStations = new Dictionary<string, StationBehaviour>();
         
         /// <summary>
@@ -23,9 +27,16 @@ namespace Gameplay.Cooking
         /// </summary>
         public void Init()
         {
+            invService = ServicesLocator.Instance.Get<InventoryService>();
             es = ServicesLocator.Instance.Get<EventService>();
             es.Add(EventNames.STATION_REGISTRATION_EVENT, OnRegisterStation());
             es.Add(EventNames.STATION_ACTIVATED_EVENT, OnActivateStation());
+        }
+
+        ~CookingService()
+        {
+            es.Remove(EventNames.STATION_REGISTRATION_EVENT, OnRegisterStation());
+            es.Remove(EventNames.STATION_ACTIVATED_EVENT, OnActivateStation());
         }
 
         /// <summary>
@@ -70,6 +81,29 @@ namespace Gameplay.Cooking
                 }
 
                 StationBehaviour behaviour = registeredStations[activationEventArgs.id];
+                StationObject data = behaviour.StationData;
+                
+                // TODO: Make this not as exponentially-scaling
+                foreach (var validRecipe in data.Recipes)
+                {
+                    FoodObject[] ingredients = validRecipe.Ingredients;
+
+                    int matchedIngredients = 0;
+                    foreach (var ingredient in ingredients)
+                    {
+                        if (invService.HasFood(ingredient))
+                        {
+                            ++matchedIngredients;
+                        }
+                    }
+
+                    if (matchedIngredients == ingredients.Length)
+                    {
+                        es.Raise(EventNames.INVENTORY_REMOVE_FOOD, behaviour, new InventoryChangeEventArgs(ingredients, Enums.INVENTORY_ACTIONS.REMOVE_FOOD));
+                        es.Raise(EventNames.INVENTORY_ADD_FOOD, behaviour, new InventoryChangeEventArgs(validRecipe.Results, Enums.INVENTORY_ACTIONS.ADD_FOOD));
+                    }
+                }
+                
             };
         }
     }

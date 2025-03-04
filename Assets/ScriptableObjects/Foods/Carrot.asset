@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dfe67da4d4ac804ab8e4b40c4124a13, type: 3}
-  m_Name: CuttingBoard
+  m_Script: {fileID: 11500000, guid: 7e589e06ae011244a813e1f547ee7710, type: 3}
+  m_Name: Carrot
   m_EditorClassIdentifier: 
-  recipes:
-  - {fileID: 11400000, guid: e3fc36dbca30d7844a3a6a4e41d493e7, type: 2}
+  sprite: {fileID: 4927284473484829774, guid: 60cbaff0300f28244a8a667f8ad54430, type: 3}
