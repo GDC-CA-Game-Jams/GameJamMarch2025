@@ -46,7 +46,7 @@ public class Projectile : MonoBehaviour
     //after the projectile is on screen for a certain amount of time, it will destroy itself
     void DeleteTimer()
     {
-        dtimer += DeleteTimer().deltaTime;
+        dtimer += Time.deltaTime;
         if (dtimer > destroy)
         {
             Destroy(gameObject);
@@ -70,7 +70,7 @@ public class Projectile : MonoBehaviour
     void FindPlayer()
     {
         Vector3 direction = player.transform.position - transform.position;
-        rb.velocity = new Vector2(direction.x, direction.y).normalize;
+        rb.linearVelocity = new Vector2(direction.x, direction.y).normalized;
         float rotation = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg * force;
         transform.rotation = Quaternion.Euler(0, 0, rotation + 90);
     }
@@ -79,7 +79,7 @@ public class Projectile : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         //checks to see if what the projectile is colliding with is actually the player
-        if (other.gameObject.ComponentTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             //still needs line of code that accesses player timer
             
