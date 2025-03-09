@@ -9,5 +9,9 @@ namespace Gameplay.Cooking.ScriptableObjects
     public class FoodObject : ScriptableObject
     {
         public Sprite sprite;
+
+        public RuntimeAnimatorController controller;
+        
+        public AnimationClip clip;
     }
 }
