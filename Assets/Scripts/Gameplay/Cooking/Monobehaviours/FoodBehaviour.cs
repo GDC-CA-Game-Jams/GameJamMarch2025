@@ -29,8 +29,7 @@ namespace Gameplay.Cooking.Monobehaviours
         {
             if (other.CompareTag("Player"))
             {
-                es.Raise(EventNames.INVENTORY_ADD_FOOD, this, new InventoryChangeEventArgs(new []{foodData}, Enums.INVENTORY_ACTIONS.ADD_FOOD));
-                Destroy(gameObject);
+                es.Raise(EventNames.INVENTORY_ADD_FOOD, this, new InventoryChangeEventArgs(new []{foodData}, Enums.INVENTORY_ACTIONS.ADD_FOOD, false));
             }
         }
 
@@ -57,5 +56,11 @@ namespace Gameplay.Cooking.Monobehaviours
             
             sr.sprite = foodData.sprite;
         }
+
+        public void DestroySelf()
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

@@ -9,11 +9,14 @@ namespace Gameplay.Inventory
         public FoodObject[] food;
 
         public Enums.INVENTORY_ACTIONS action;
+
+        public bool toStation;
         
-        public InventoryChangeEventArgs(FoodObject[] food, Enums.INVENTORY_ACTIONS action)
+        public InventoryChangeEventArgs(FoodObject[] food, Enums.INVENTORY_ACTIONS action, bool toStation)
         {
             this.food = food;
             this.action = action;
+            this.toStation = toStation;
         }
     }
 }

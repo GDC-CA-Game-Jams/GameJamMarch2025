@@ -20,7 +20,9 @@ namespace Gameplay.Cooking
 
         private InventoryService invService;
         
-        private Dictionary<String, StationBehaviour> registeredStations = new Dictionary<string, StationBehaviour>();
+        private Dictionary<string, StationBehaviour> registeredStations = new Dictionary<string, StationBehaviour>();
+
+        private Dictionary<string, List<FoodObject>> storedFood = new Dictionary<string, List<FoodObject>>();
         
         /// <summary>
         /// Initializes the service to be listening for the correct events
@@ -59,13 +61,13 @@ namespace Gameplay.Cooking
                 string id = registeredStations.Count.ToString();
                 behaviour.SetId(id);
                 registeredStations.Add(id, behaviour);
+                storedFood.Add(id, new List<FoodObject>());
                 Debug.Log($"[{GetType().Name}] Successfully registered ID {id} to behaviour {behaviour}");
             };
         }
 
         /// <summary>
         /// Handle the activation of a station
-        /// TODO: Read player inventory, determine if anything can be done, and do it
         /// </summary>
         /// <returns>Event to run when a station is activated</returns>
         private EventHandler OnActivateStation()
@@ -80,31 +82,61 @@ namespace Gameplay.Cooking
                     return;
                 }
 
-                StationBehaviour behaviour = registeredStations[activationEventArgs.id];
+                string id = activationEventArgs.id;
+                FoodObject food = invService.GetFood(0);
+                StationBehaviour behaviour = registeredStations[id];
                 StationObject data = behaviour.StationData;
-                
-                // TODO: Make this not as exponentially-scaling
-                foreach (var validRecipe in data.Recipes)
+                if (food)
                 {
-                    FoodObject[] ingredients = validRecipe.Ingredients;
+                    OnPlaceStation(id, behaviour, data, food);
+                    return;
+                }
 
-                    int matchedIngredients = 0;
-                    foreach (var ingredient in ingredients)
-                    {
-                        if (invService.HasFood(ingredient))
-                        {
-                            ++matchedIngredients;
-                        }
-                    }
+                OnPickupStation(id);
 
-                    if (matchedIngredients == ingredients.Length)
+            };
+        }
+
+        private void OnPlaceStation(string id, StationBehaviour behaviour, StationObject data, FoodObject food)
+        {
+            es.Raise(EventNames.INVENTORY_REMOVE_FOOD, this, new InventoryChangeEventArgs(new [] {food}, Enums.INVENTORY_ACTIONS.REMOVE_FOOD, true));
+            storedFood[id].Add(food);
+            // TODO: Make this not as exponentially-scaling
+            foreach (var validRecipe in data.Recipes)
+            {
+                FoodObject[] ingredients = validRecipe.Ingredients;
+
+                int matchedIngredients = 0;
+                foreach (var ingredient in ingredients)
+                {
+                    if (storedFood[id].Contains(ingredient))
                     {
-                        es.Raise(EventNames.INVENTORY_REMOVE_FOOD, behaviour, new InventoryChangeEventArgs(ingredients, Enums.INVENTORY_ACTIONS.REMOVE_FOOD));
-                        es.Raise(EventNames.INVENTORY_ADD_FOOD, behaviour, new InventoryChangeEventArgs(validRecipe.Results, Enums.INVENTORY_ACTIONS.ADD_FOOD));
+                        ++matchedIngredients;
                     }
                 }
-                
-            };
+
+                if (matchedIngredients == ingredients.Length)
+                {
+                    //es.Raise(EventNames.INVENTORY_REMOVE_FOOD, behaviour, new InventoryChangeEventArgs(ingredients, Enums.INVENTORY_ACTIONS.REMOVE_FOOD));
+                    //es.Raise(EventNames.INVENTORY_ADD_FOOD, behaviour, new InventoryChangeEventArgs(validRecipe.Results, Enums.INVENTORY_ACTIONS.ADD_FOOD));
+                    foreach (var foodObject in ingredients)
+                    {
+                        storedFood[id].Remove(foodObject);
+                    }
+                    storedFood[id].AddRange(validRecipe.Results);
+                }
+            }
+        }
+        
+        private void OnPickupStation(string id)
+        {
+            if (storedFood[id].Count > 0)
+            {
+                int lastIndex = storedFood[id].Count - 1;
+                FoodObject lastFood = storedFood[id][lastIndex];
+                storedFood[id].RemoveAt(lastIndex);
+                es.Raise(EventNames.INVENTORY_ADD_FOOD, this, new InventoryChangeEventArgs(new [] {lastFood}, Enums.INVENTORY_ACTIONS.ADD_FOOD, false));
+            }
         }
     }
 }

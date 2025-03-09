@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Gameplay.Cooking.ScriptableObjects;
 using UnityEngine;
 using Util;
@@ -16,6 +17,8 @@ namespace Gameplay.Cooking.Monobehaviours
 
         public StationObject StationData => stationData;
 
+        private bool playerInRange = false;
+        
         private void Start()
         {
             es = ServicesLocator.Instance.Get<EventService>();
@@ -32,11 +35,29 @@ namespace Gameplay.Cooking.Monobehaviours
             this.id = id;
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
+            {
+                Debug.Log($"[{GetType().Name}] Activating Station {id}");
+                es.Raise(EventNames.STATION_ACTIVATED_EVENT, this, new StationActivationEventArgs(id));
+            }
+        }
+        
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
             {
-                es.Raise(EventNames.STATION_ACTIVATED_EVENT, this, new StationActivationEventArgs(id));
+                playerInRange = true;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                playerInRange = false;
             }
         }
     }
