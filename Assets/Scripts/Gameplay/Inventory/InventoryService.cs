@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Gameplay.Cooking.Monobehaviours;
 using Gameplay.Cooking.ScriptableObjects;
 using UnityEngine;
 using Util;
@@ -31,7 +32,7 @@ namespace Gameplay.Inventory
             return (sender, args) =>
             {
                 InventoryChangeEventArgs inventoryChangeEventArgs = args as InventoryChangeEventArgs;
-
+                
                 if (inventoryChangeEventArgs is null)
                 {
                     Debug.LogError($"[{GetType().Name}] Failed to cast inventory event args, pickup failed");
@@ -42,6 +43,18 @@ namespace Gameplay.Inventory
                 {
                     Debug.LogWarning($"[{GetType().Name}] Invalid action type {inventoryChangeEventArgs.action} for this event, failing");
                     return;
+                }
+
+                if (carryingFood.Count >= Constants.MAX_FOOD_CARRY)
+                {
+                    Debug.Log($"[{GetType().Name}] Player already carrying maximum allowed food {Constants.MAX_FOOD_CARRY}");
+                    return;
+                }
+
+                if (sender.GetType() == typeof(FoodBehaviour))
+                {
+                    FoodBehaviour behaviour = sender as FoodBehaviour;
+                    behaviour.DestroySelf();
                 }
                 
                 carryingFood.AddRange(inventoryChangeEventArgs.food);
@@ -80,6 +93,15 @@ namespace Gameplay.Inventory
         {
             return carryingFood.Contains(food);
         }
-        
+
+        public FoodObject GetFood(int pickupOrder)
+        {
+            if (pickupOrder < carryingFood.Count)
+            {
+                return carryingFood[pickupOrder];
+            }
+
+            return null;
+        }
     }
 }

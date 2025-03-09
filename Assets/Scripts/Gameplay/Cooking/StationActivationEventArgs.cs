@@ -1,4 +1,5 @@
-﻿using Gameplay.Cooking.ScriptableObjects;
+﻿using System.Collections.Generic;
+using Gameplay.Cooking.ScriptableObjects;
 
 namespace Gameplay.Cooking
 {

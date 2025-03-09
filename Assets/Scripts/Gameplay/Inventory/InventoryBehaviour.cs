@@ -81,8 +81,13 @@ namespace Gameplay.Inventory
                         FoodBehaviour followBehaviour = followFood.GetComponent<FoodBehaviour>();
                         if (food == followBehaviour.FoodData)
                         {
-                            Destroy(followFood);
                             followingFoods.RemoveAt(i);
+                            // TODO: Make sure this happens when the player is NOT touching it
+                            if (inventoryChangeEventArgs.toStation)
+                            {
+                                followBehaviour.DestroySelf();
+                            }
+                            followFood.GetComponent<Collider2D>().enabled = true;
                             break;
                         }
                     }

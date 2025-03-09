@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Stew
   m_EditorClassIdentifier: 
   sprite: {fileID: 5945916903168679572, guid: e73efb990d3a0fb40a340712432ddaeb, type: 3}
+  controller: {fileID: 9100000, guid: 212c9f18668181d4d8e6e1ad573aac10, type: 2}
+  clip: {fileID: 7400000, guid: 6ef2f90a434de304b807c7db24b45834, type: 2}

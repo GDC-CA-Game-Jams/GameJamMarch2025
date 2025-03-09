@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: RawMeat
   m_EditorClassIdentifier: 
   sprite: {fileID: 8274796053424072817, guid: 5b239439fd227f04aafb5a6cfd0570fb, type: 3}
+  controller: {fileID: 9100000, guid: 8b2288dc4efd3344e9d9716fa845cdf8, type: 2}
+  clip: {fileID: 7400000, guid: 9047bdc5e9653a54cbe4ba180f3309c3, type: 2}

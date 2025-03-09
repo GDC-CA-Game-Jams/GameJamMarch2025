@@ -13,6 +13,10 @@ namespace Gameplay.Cooking.Monobehaviours
         [SerializeField] private FoodObject foodData;
 
         [SerializeField] private SpriteRenderer sr;
+
+        [SerializeField] private Animator anim;
+
+        [SerializeField] private AnimationClip clip;
         
         private EventService es;
         
@@ -29,8 +33,7 @@ namespace Gameplay.Cooking.Monobehaviours
         {
             if (other.CompareTag("Player"))
             {
-                es.Raise(EventNames.INVENTORY_ADD_FOOD, this, new InventoryChangeEventArgs(new []{foodData}, Enums.INVENTORY_ACTIONS.ADD_FOOD));
-                Destroy(gameObject);
+                es.Raise(EventNames.INVENTORY_ADD_FOOD, this, new InventoryChangeEventArgs(new []{foodData}, Enums.INVENTORY_ACTIONS.ADD_FOOD, false));
             }
         }
 
@@ -56,6 +59,14 @@ namespace Gameplay.Cooking.Monobehaviours
             }
             
             sr.sprite = foodData.sprite;
+            anim.runtimeAnimatorController = foodData.controller;
+            anim.StartPlayback();
         }
+
+        public void DestroySelf()
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
