@@ -3477,10 +3477,6 @@ PrefabInstance:
       value: FoodObject (1)
       objectReference: {fileID: 0}
     - target: {fileID: 554207701714095915, guid: 77f307f4671d3a146a6575daeef34d7c, type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 554207701714095915, guid: 77f307f4671d3a146a6575daeef34d7c, type: 3}
       propertyPath: foodData
       value: 
       objectReference: {fileID: 11400000, guid: 1bc49b1513cdc234b8f633c6f57e1ab1, type: 2}

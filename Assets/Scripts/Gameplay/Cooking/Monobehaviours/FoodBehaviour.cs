@@ -58,7 +58,12 @@ namespace Gameplay.Cooking.Monobehaviours
             
             sr.sprite = foodData.sprite;
             anim.clip = foodData.clip;
-            anim.Play();
+            anim.AddClip(foodData.clip, foodData.clip.name);
+            anim.wrapMode = WrapMode.Loop;
+            if (anim.Play())
+            {
+                Debug.Log($"[{GetType().Name}] Successfully playing animation!");
+            }
         }
 
         public void DestroySelf()

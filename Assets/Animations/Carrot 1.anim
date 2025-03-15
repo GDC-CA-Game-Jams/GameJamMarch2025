@@ -8,7 +8,7 @@ AnimationClip:
   m_PrefabAsset: {fileID: 0}
   m_Name: Carrot 1
   serializedVersion: 7
-  m_Legacy: 0
+  m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -41,22 +41,8 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: 4927284473484829774, guid: 60cbaff0300f28244a8a667f8ad54430, type: 3}
-    - {fileID: 421476678, guid: 60cbaff0300f28244a8a667f8ad54430, type: 3}
-    - {fileID: 463182418, guid: 60cbaff0300f28244a8a667f8ad54430, type: 3}
-    - {fileID: -1770219188, guid: 60cbaff0300f28244a8a667f8ad54430, type: 3}
-    - {fileID: -1834746232, guid: 60cbaff0300f28244a8a667f8ad54430, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
