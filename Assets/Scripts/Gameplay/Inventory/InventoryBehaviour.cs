@@ -47,9 +47,12 @@ namespace Gameplay.Inventory
                 {
                     GameObject followFood = Instantiate(foodPrefab, transform.position, transform.rotation);
                     followFood.GetComponent<Collider2D>().enabled = false;
-                    FoodBehaviour followBehaviour = followFood.GetComponent<FoodBehaviour>();
-                    followBehaviour.SetData(food);
-                    followBehaviour.Hydrate();
+                    FollowBehaviour followBehaviour = followFood.AddComponent<FollowBehaviour>();
+                    followBehaviour.SetTarget(gameObject);
+                    followBehaviour.StartFollow();
+                    FoodBehaviour foodBehaviour = followFood.GetComponent<FoodBehaviour>();
+                    foodBehaviour.SetData(food);
+                    foodBehaviour.Hydrate();
                     followingFoods.Add(followFood);
                 }
             };

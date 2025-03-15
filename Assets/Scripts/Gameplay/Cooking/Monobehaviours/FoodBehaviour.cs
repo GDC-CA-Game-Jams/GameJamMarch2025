@@ -14,9 +14,7 @@ namespace Gameplay.Cooking.Monobehaviours
 
         [SerializeField] private SpriteRenderer sr;
 
-        [SerializeField] private Animator anim;
-
-        [SerializeField] private AnimationClip clip;
+        [SerializeField] private Animation anim;
         
         private EventService es;
         
@@ -59,8 +57,8 @@ namespace Gameplay.Cooking.Monobehaviours
             }
             
             sr.sprite = foodData.sprite;
-            anim.runtimeAnimatorController = foodData.controller;
-            anim.StartPlayback();
+            anim.clip = foodData.clip;
+            anim.Play();
         }
 
         public void DestroySelf()
