@@ -86,13 +86,16 @@ namespace Gameplay.Cooking
                 FoodObject food = invService.GetFood(0);
                 StationBehaviour behaviour = registeredStations[id];
                 StationObject data = behaviour.StationData;
-                if (food)
+                if (food && behaviour.GetOpenSpots() > 0)
                 {
                     OnPlaceStation(id, behaviour, data, food);
                     return;
                 }
 
-                OnPickupStation(id);
+                if (!food)
+                {
+                    OnPickupStation(id);
+                }
 
             };
         }
@@ -126,6 +129,8 @@ namespace Gameplay.Cooking
                     storedFood[id].AddRange(validRecipe.Results);
                 }
             }
+            
+            es.Raise(EventNames.STATION_UPDATE_FOOD_EVENT, this, new StationShowHeldFoodArgs(id, storedFood[id]));
         }
         
         private void OnPickupStation(string id)
@@ -136,6 +141,7 @@ namespace Gameplay.Cooking
                 FoodObject lastFood = storedFood[id][lastIndex];
                 storedFood[id].RemoveAt(lastIndex);
                 es.Raise(EventNames.INVENTORY_ADD_FOOD, this, new InventoryChangeEventArgs(new [] {lastFood}, Enums.INVENTORY_ACTIONS.ADD_FOOD, false));
+                es.Raise(EventNames.STATION_UPDATE_FOOD_EVENT, this, new StationShowHeldFoodArgs(id, storedFood[id]));
             }
         }
     }

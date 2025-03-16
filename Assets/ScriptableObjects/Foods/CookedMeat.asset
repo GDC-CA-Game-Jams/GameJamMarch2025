@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CookedMeat
   m_EditorClassIdentifier: 
   sprite: {fileID: -5034028696483816356, guid: d2d112b7a52a16c44b05ac3a38391f47, type: 3}
-  controller: {fileID: 9100000, guid: b3b8e22624475434ca5943965058dc88, type: 2}
+  controller: {fileID: 9100000, guid: fde71e196417e194d9a5b5d8313f59d7, type: 2}
   clip: {fileID: 7400000, guid: 889d3a5ce0e2cb744a294959daa58807, type: 2}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Potato
   m_EditorClassIdentifier: 
   sprite: {fileID: -7999379356749770539, guid: 02acfb498695ce447902cc42cb810a48, type: 3}
-  controller: {fileID: 9100000, guid: 921d40640d77a3a4bbeb1b7e30beb08e, type: 2}
+  controller: {fileID: 9100000, guid: 481935fc4ade3934e9c2d3e9b4d9f0c7, type: 2}
   clip: {fileID: 7400000, guid: bc8b2b5224ce19145afdfed611ebbe31, type: 2}

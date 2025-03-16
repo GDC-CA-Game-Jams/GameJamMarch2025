@@ -14,11 +14,13 @@ namespace Gameplay.Cooking.Monobehaviours
 
         [SerializeField] private SpriteRenderer sr;
 
-        [SerializeField] private Animation anim;
+        [SerializeField] private Animator anim;
         
         private EventService es;
         
         public FoodObject FoodData => foodData;
+
+        private bool playerInRange = false;
         
         private void Start()
         {
@@ -27,11 +29,28 @@ namespace Gameplay.Cooking.Monobehaviours
             Hydrate();
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(Constants.INTERACT_BUTTON) && playerInRange)
+            {
+                Debug.Log($"[{GetType().Name}] Picking up food {foodData.name}");
+                es.Raise(EventNames.INVENTORY_ADD_FOOD, this, new InventoryChangeEventArgs(new []{foodData}, Enums.INVENTORY_ACTIONS.ADD_FOOD, false));
+            }
+        }
+         
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
             {
-                es.Raise(EventNames.INVENTORY_ADD_FOOD, this, new InventoryChangeEventArgs(new []{foodData}, Enums.INVENTORY_ACTIONS.ADD_FOOD, false));
+                playerInRange = true;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                playerInRange = false;
             }
         }
 
@@ -57,19 +76,14 @@ namespace Gameplay.Cooking.Monobehaviours
             }
             
             sr.sprite = foodData.sprite;
-            anim.clip = foodData.clip;
-            anim.AddClip(foodData.clip, foodData.clip.name);
-            anim.wrapMode = WrapMode.Loop;
-            if (anim.Play())
-            {
-                Debug.Log($"[{GetType().Name}] Successfully playing animation!");
-            }
+            anim.runtimeAnimatorController = foodData.controller;
+            anim.Play(foodData.clip.name);
         }
-
+        
+        
         public void DestroySelf()
         {
             Destroy(gameObject);
         }
-        
     }
 }

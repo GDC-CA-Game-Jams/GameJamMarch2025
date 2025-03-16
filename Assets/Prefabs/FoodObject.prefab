@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8938888827365476527}
   - component: {fileID: 554207701714095915}
   - component: {fileID: 4580405001190634720}
-  - component: {fileID: 1820216624379163646}
+  - component: {fileID: 4561055518875645145}
   m_Layer: 0
   m_Name: FoodObject
   m_TagString: Untagged
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodData: {fileID: 0}
   sr: {fileID: 8938888827365476527}
-  anim: {fileID: 1820216624379163646}
+  anim: {fileID: 4561055518875645145}
 --- !u!58 &4580405001190634720
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -141,19 +141,25 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.08
---- !u!111 &1820216624379163646
-Animation:
+--- !u!95 &4561055518875645145
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509838410321130542}
   m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
   m_UpdateMode: 0
-  m_CullingType: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

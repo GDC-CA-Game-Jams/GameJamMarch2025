@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Carrot
   m_EditorClassIdentifier: 
   sprite: {fileID: 4927284473484829774, guid: 60cbaff0300f28244a8a667f8ad54430, type: 3}
-  controller: {fileID: 9100000, guid: 8150b516ec8c76545a6c0d306ab20a9b, type: 2}
+  controller: {fileID: 9100000, guid: 3bbc5ae7a4d94824eaac3b47a2ad43d5, type: 2}
   clip: {fileID: 7400000, guid: 34f1b4f2c1ef8c94d94a6a90dbcaa3fe, type: 2}
