@@ -93,7 +93,7 @@ namespace Gameplay.Inventory
         {
             return carryingFood.Contains(food);
         }
-
+        
         public FoodObject GetFood(int pickupOrder)
         {
             if (pickupOrder < carryingFood.Count)
