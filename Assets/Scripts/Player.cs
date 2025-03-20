@@ -3,15 +3,24 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     float speed = 2f;
-		Vector3 moveLeft = new Vector3(-1,0,0);
-		Vector3 moveRight = new Vector3(1,0,0);
-		Vector3 moveUp = new Vector3(0,1,0);
-		Vector3 moveDown = new Vector3(0,-1,0);
+	Vector3 moveLeft = new Vector3(-1,0,0);
+	Vector3 moveRight = new Vector3(1,0,0);
+	Vector3 moveUp = new Vector3(0,1,0);
+	Vector3 moveDown = new Vector3(0,-1,0);
+	Vector3 fullScreenTopAndLeftEdges;
+    Vector3 fullScreenBottomAndRightEdges;
 
 	Animator animator;
 	public void Start()
 	{
 		animator = GetComponent<Animator>();
+		fullScreenTopAndLeftEdges = Camera.main.ScreenToWorldPoint(new Vector3(10, Screen.height-100, 10));//x,y,z
+        fullScreenBottomAndRightEdges = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width+100, 10, 10));//x,y,z
+                                                                                                          //50 and -50 so it is near, but not at, the screen boundaries
+                                                                                                          //Screen.height is a thing too
+                                                                                                          //but i want the upper left corner which is x coord 0
+                                                                                                          //bottom left corner is (0,0) (x,y)
+                                                                                                          //top right is pixelWidth, pixelHeight (x,y)
 	}
 
     // Update is called once per frame
@@ -56,6 +65,18 @@ public class Player : MonoBehaviour
 			animator.SetBool ("WalkDown", false);
 			}
 		}
+		StayInBoundaries();
 			
+    }
+
+	public void StayInBoundaries()
+    {
+        //Keep object within screen boundaries
+        Vector3 temp = transform.position;
+        if (temp.y > fullScreenTopAndLeftEdges.y) { temp.y = fullScreenTopAndLeftEdges.y; }
+        if (temp.x < fullScreenTopAndLeftEdges.x) { temp.x = fullScreenTopAndLeftEdges.x; }
+        if (temp.y < fullScreenBottomAndRightEdges.y) { temp.y = fullScreenBottomAndRightEdges.y; }
+        if (temp.x > fullScreenBottomAndRightEdges.x) { temp.x = fullScreenBottomAndRightEdges.x; }
+        transform.position = temp;
     }
 }
