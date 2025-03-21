@@ -1,4 +1,5 @@
-﻿using Gameplay.Cooking;
+﻿using System;
+using Gameplay.Cooking;
 using Gameplay.Inventory;
 using UnityEngine;
 using Util.Services;
@@ -8,7 +9,7 @@ namespace Gameplay
     /// <summary>
     /// Things to run once at game start and never again
     /// </summary>
-    public class OnFirstLoad : MonoBehaviour
+    public class OnFirstLoadGameScene : MonoBehaviour
     {
         private void Awake()
         {
@@ -19,7 +20,12 @@ namespace Gameplay
             ServicesLocator.Instance.Register(new CookingService());
             ServicesLocator.Instance.Get<CookingService>().Init();
             
-            Destroy(gameObject);
+        }
+
+        private void OnDisable()
+        {
+            ServicesLocator.Instance.Unregister<InventoryService>();
+            ServicesLocator.Instance.Unregister<CookingService>();
         }
     }
 }

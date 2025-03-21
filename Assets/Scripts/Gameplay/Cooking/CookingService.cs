@@ -33,12 +33,14 @@ namespace Gameplay.Cooking
             es = ServicesLocator.Instance.Get<EventService>();
             es.Add(EventNames.STATION_REGISTRATION_EVENT, OnRegisterStation());
             es.Add(EventNames.STATION_ACTIVATED_EVENT, OnActivateStation());
+            es.Add(EventNames.STATION_SPAWN_FOOD_EVENT, OnSpawnAtStation());
         }
 
         ~CookingService()
         {
             es.Remove(EventNames.STATION_REGISTRATION_EVENT, OnRegisterStation());
             es.Remove(EventNames.STATION_ACTIVATED_EVENT, OnActivateStation());
+            es.Remove(EventNames.STATION_SPAWN_FOOD_EVENT, OnSpawnAtStation());
         }
 
         /// <summary>
@@ -100,6 +102,24 @@ namespace Gameplay.Cooking
             };
         }
 
+        private EventHandler OnSpawnAtStation()
+        {
+            return (sender, args) =>
+            {
+                StationSpawnFoodEventArgs spawnFoodEventArgs = args as StationSpawnFoodEventArgs;
+
+                if (spawnFoodEventArgs is null)
+                {
+                    Debug.LogError($"[{GetType().Name}] Failed to cast food spawn args, spawn failed");
+                    return;
+                }
+
+                string id = spawnFoodEventArgs.id;
+                storedFood[id].Add(spawnFoodEventArgs.food);
+                es.Raise(EventNames.STATION_UPDATE_FOOD_EVENT, this, new StationShowHeldFoodArgs(id, storedFood[id]));
+            };
+        }
+        
         private void OnPlaceStation(string id, StationBehaviour behaviour, StationObject data, FoodObject food)
         {
             es.Raise(EventNames.INVENTORY_REMOVE_FOOD, this, new InventoryChangeEventArgs(new [] {food}, Enums.INVENTORY_ACTIONS.REMOVE_FOOD, true));

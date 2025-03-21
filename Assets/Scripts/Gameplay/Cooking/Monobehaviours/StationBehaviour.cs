@@ -12,16 +12,16 @@ namespace Gameplay.Cooking.Monobehaviours
         [SerializeField] private StationObject stationData;
 
         [SerializeField] private GameObject[] openSpots;
+        
+        protected EventService es;
 
-        private EventService es;
-
-        private string id = "";
+        protected string id = "";
 
         public StationObject StationData => stationData;
 
-        private bool playerInRange = false;
+        protected bool playerInRange = false;
         
-        private void Start()
+        protected virtual void Start()
         {
             es = ServicesLocator.Instance.Get<EventService>();
             es.Raise(EventNames.STATION_REGISTRATION_EVENT, this, new StationRegistrationEventArgs(stationData, openSpots.Length));
@@ -58,7 +58,7 @@ namespace Gameplay.Cooking.Monobehaviours
             return count;
         }
         
-        private void Update()
+        protected virtual void Update()
         {
             if (Input.GetKeyDown(Constants.INTERACT_BUTTON) && playerInRange)
             {

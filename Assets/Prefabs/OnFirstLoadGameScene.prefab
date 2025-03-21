@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3688431179868059491}
   - component: {fileID: 1871690425698043493}
   m_Layer: 0
-  m_Name: OnFirstLoad
+  m_Name: OnFirstLoadGameScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
