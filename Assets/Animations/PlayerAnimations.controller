@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerWalkUp
+  m_Name: WalkUp
   m_Speed: 0.4
   m_CycleOffset: 0
   m_Transitions: []
@@ -68,7 +68,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerIdle
+  m_Name: Idle
   m_Speed: 0.4
   m_CycleOffset: 0
   m_Transitions: []
@@ -246,7 +246,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerWalkLeftRight
+  m_Name: WalkLeftRight
   m_Speed: 0.4
   m_CycleOffset: 0
   m_Transitions: []
@@ -272,7 +272,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerWalkDown
+  m_Name: WalkDown
   m_Speed: 0.4
   m_CycleOffset: 0
   m_Transitions: []

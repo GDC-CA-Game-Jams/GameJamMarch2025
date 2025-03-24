@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -31,8 +33,10 @@ public class Player : MonoBehaviour
                                                                                                           //bottom left corner is (0,0) (x,y)
                                                                                                           //top right is pixelWidth, pixelHeight (x,y)
 		sr = gameObject.GetComponent<SpriteRenderer>();
-		currentAnimation = "Idle";
-	}
+        //animator = gameObject.GetComponent<Animator>();
+		currentAnimation = animIdle;
+        //animator.Play(currentAnimation);
+    }
 
     // Update is called once per frame
     void Update()
@@ -92,6 +96,7 @@ public class Player : MonoBehaviour
 
         if (currentAnimation != newAnimation)
         {
+            //animator.Play(newAnimation);
             animator.SetBool(newAnimation, true);
             animator.SetBool(currentAnimation, false);
             currentAnimation = newAnimation;
