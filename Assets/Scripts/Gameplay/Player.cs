@@ -10,9 +10,10 @@ public class Player : MonoBehaviour
 	Vector3 moveUp = new Vector3(0,1,0);
 	Vector3 moveDown = new Vector3(0,-1,0);
     Vector3 moveIdle = new Vector3(0, 0, 0);
-	Vector3 fullScreenTopAndLeftEdges;
-    Vector3 fullScreenBottomAndRightEdges;
+	//Vector3 fullScreenTopAndLeftEdges;
+    //Vector3 fullScreenBottomAndRightEdges;
 	Vector3 currentMovement;
+    Vector3 nextMovement;
 	string currentAnimation;
 	string newAnimation;
 	string animUp = "WalkUp";
@@ -20,13 +21,14 @@ public class Player : MonoBehaviour
 	string animSide = "WalkLeftRight";
     string animIdle = "Idle";
 	SpriteRenderer sr;
+    private Rigidbody2D rigid;
 
 	Animator animator;
 	public void Start()
 	{
 		animator = GetComponent<Animator>();
-		fullScreenTopAndLeftEdges = Camera.main.ScreenToWorldPoint(new Vector3(10, Screen.height-100, 10));//x,y,z
-        fullScreenBottomAndRightEdges = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width+100, 10, 10));//x,y,z
+		//fullScreenTopAndLeftEdges = Camera.main.ScreenToWorldPoint(new Vector3(10, Screen.height-100, 10));//x,y,z
+        //fullScreenBottomAndRightEdges = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width+100, 10, 10));//x,y,z
                                                                                                           //50 and -50 so it is near, but not at, the screen boundaries
                                                                                                           //Screen.height is a thing too
                                                                                                           //but i want the upper left corner which is x coord 0
@@ -36,24 +38,33 @@ public class Player : MonoBehaviour
         //animator = gameObject.GetComponent<Animator>();
 		currentAnimation = animIdle;
         //animator.Play(currentAnimation);
+        rigid = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-		PlayerMovement();
-		StayInBoundaries();
+		//PlayerMovement();
+		//StayInBoundaries();
+    }
+
+    void FixedUpdate()
+    {
+        PlayerMovement();
+        rigid.MovePosition(new Vector2((transform.position.x + currentMovement.x * Time.deltaTime * speed), (transform.position.y + currentMovement.y * Time.deltaTime * speed)));
     }
 
 	public void StayInBoundaries()
     {
         //Keep object within screen boundaries
+       /* 
         Vector3 temp = transform.position;
         if (temp.y > fullScreenTopAndLeftEdges.y) { temp.y = fullScreenTopAndLeftEdges.y; }
         if (temp.x < fullScreenTopAndLeftEdges.x) { temp.x = fullScreenTopAndLeftEdges.x; }
         if (temp.y < fullScreenBottomAndRightEdges.y) { temp.y = fullScreenBottomAndRightEdges.y; }
         if (temp.x > fullScreenBottomAndRightEdges.x) { temp.x = fullScreenBottomAndRightEdges.x; }
         transform.position = temp;
+       */
     }
 
     public void PlayerMovement()
@@ -86,12 +97,16 @@ public class Player : MonoBehaviour
             SetAnim(animIdle, moveIdle);
         }
 
-        Move();
+        //Move();
     }
 
 	public void Move()
 	{
-        transform.position += currentMovement * Time.deltaTime * speed; //x,y,z
+        //nextMovement = transform.position + currentMovement * Time.deltaTime * speed; //x,y,z
+        //rigid.MovePosition(nextMovement);
+        //transform.position += currentMovement * Time.deltaTime * speed; //x,y,z
+        //transform.Translate += currentMovement * Time.deltaTime * speed; //x,y,z
+        rigid.MovePosition(new Vector2((transform.position.x + currentMovement.x * Time.deltaTime * speed), (transform.position.y + currentMovement.y * Time.deltaTime * speed)));
     }
 
     public void SetAnim(string anim, Vector3 move)
