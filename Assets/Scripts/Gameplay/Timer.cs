@@ -53,4 +53,9 @@ public class Timer : MonoBehaviour
             remainingTime += correctFoodTimeGain;
         };
     }
+
+    public void Damage(float damage)
+    {
+        remainingTime -= damage;
+    }
 }
