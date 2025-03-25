@@ -13,6 +13,9 @@ public class FireProjectile : MonoBehaviour
     //holds the transform/location based on gameobject passed from inspector. This will be where the projectile is spawned in
     public Transform projectilePos;
 
+    //how long before the 
+    public float startTimer = 0;
+
     //can set the frequency the enemy fires/shoots the projectiles at the player from the inspector
     public float fireInterval = 0;
 
@@ -23,6 +26,12 @@ public class FireProjectile : MonoBehaviour
     private bool trackdistance = false;
 
     //used to check how much time is passed before next projectile is fired
+    private float projectiletimer = 0;
+
+    //used to check if the enemy can start firing projectiles
+    private bool startFire = false;
+
+    //used to track how much time has passed before enemy can start firing projectiles
     private float timer = 0;
 
     void Start()
@@ -38,6 +47,33 @@ public class FireProjectile : MonoBehaviour
     }
 
     void Update()
+    {
+        FireStart();
+    }
+
+    void FireStart()
+    {
+        if (startFire == false)
+        {
+            timer += Time.deltaTime;
+            if (timer >= startTimer)
+            {
+                startFire = true;
+                Fire();
+            }
+            else
+            {
+                return;
+            }
+        }
+        else if (startFire == true)
+        {
+            FireDistance();
+        }
+        
+        
+    }
+    void FireDistance()
     {
         //if tracking the player's location is being used, then the player's distance from enemy will be determined. If not, the enemy will fire normally
         if (trackdistance == true)
@@ -64,13 +100,13 @@ public class FireProjectile : MonoBehaviour
         if (fireInterval > 0)
         {
             //keeps track of how much time has passed
-            timer += Time.deltaTime;
+            projectiletimer += Time.deltaTime;
 
             //checks if enough time has passed before the enemy fires another projectile
-            if (timer > fireInterval)
+            if (projectiletimer > fireInterval)
             {
                 //resets the timer, so it can start tracking when the next projectile should be fired
-                timer = 0;
+                projectiletimer = 0;
 
                 //calls the function that adds the projectile to the game
                 Fire();

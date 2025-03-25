@@ -216,7 +216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 3285567711751282284, guid: bcbdc378d6f9743459a2a49582a71e59, type: 3}
   projectilePos: {fileID: 659636375}
-  fireInterval: 2
+  startTimer: 5
+  fireInterval: 5
   playerdistance: 0
 --- !u!212 &659636374
 SpriteRenderer:

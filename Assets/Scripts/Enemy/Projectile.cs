@@ -6,12 +6,16 @@ public class Projectile : MonoBehaviour
 {
     //Inspector Variables
     public GameObject player;
-    
+
+    public Timer gameTimer;
+
     public float force;
     
     public float tracking = 0;
     
     public float destroy = 5;
+
+    public float damage = 3;
 
     //Script Only Variables
     private Rigidbody2D rb;
@@ -28,6 +32,7 @@ public class Projectile : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         player = GameObject.FindGameObjectWithTag("Player");
+        gameTimer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
 
         FindPlayer();
 
@@ -82,7 +87,7 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             //still needs line of code that accesses player timer
-            
+            gameTimer.Damage(damage);
             //destroys projectile
             Destroy(gameObject);
         }
