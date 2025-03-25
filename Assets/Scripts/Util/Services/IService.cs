@@ -1,9 +1,11 @@
-﻿namespace Util.Services
+﻿using System;
+
+namespace Util.Services
 {
     /// <summary>
     /// Universal service interface, all services implement this
     /// </summary>
-    public interface IService
+    public interface IService : IDisposable
     {
         
     }

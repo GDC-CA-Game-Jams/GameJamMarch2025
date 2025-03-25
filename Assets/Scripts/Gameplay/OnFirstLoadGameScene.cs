@@ -22,10 +22,11 @@ namespace Gameplay
             
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             ServicesLocator.Instance.Unregister<InventoryService>();
             ServicesLocator.Instance.Unregister<CookingService>();
+            Debug.Log($"[{GetType().Name}] Destroying Cooking Service!");
         }
     }
 }

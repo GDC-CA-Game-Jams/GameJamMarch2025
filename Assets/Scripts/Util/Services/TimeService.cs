@@ -26,5 +26,10 @@ namespace Util.Services
         {
             get => (Time.deltaTime * timeScale);
         }
+
+        public void Dispose()
+        {
+            // TODO release managed resources here
+        }
     }
 }

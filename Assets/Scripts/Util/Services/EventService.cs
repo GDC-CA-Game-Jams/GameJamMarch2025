@@ -89,5 +89,10 @@ namespace Util.Services
                 d.DynamicInvoke(sender, e);
             }
         }
+
+        public void Dispose()
+        {
+            // TODO release managed resources here
+        }
     }
 }

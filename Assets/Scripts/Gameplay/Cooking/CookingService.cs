@@ -36,11 +36,12 @@ namespace Gameplay.Cooking
             es.Add(EventNames.STATION_SPAWN_FOOD_EVENT, OnSpawnAtStation());
         }
 
-        ~CookingService()
+        public void Dispose()
         {
             es.Remove(EventNames.STATION_REGISTRATION_EVENT, OnRegisterStation());
             es.Remove(EventNames.STATION_ACTIVATED_EVENT, OnActivateStation());
             es.Remove(EventNames.STATION_SPAWN_FOOD_EVENT, OnSpawnAtStation());
+            Debug.Log($"[{GetType().Name}] Destroying Cooking Service!");
         }
 
         /// <summary>

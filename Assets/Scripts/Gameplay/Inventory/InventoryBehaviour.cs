@@ -25,6 +25,12 @@ namespace Gameplay.Inventory
             invService = ServicesLocator.Instance.Get<InventoryService>();
         }
 
+        private void OnDestroy()
+        {
+            es.Remove(EventNames.INVENTORY_ADD_SUCCESS, OnPickupFood());
+            es.Remove(EventNames.INVENTORY_REMOVE_SUCESS, OnDropFood());
+        }
+
         private EventHandler OnPickupFood()
         {
             return (sender, args) =>
