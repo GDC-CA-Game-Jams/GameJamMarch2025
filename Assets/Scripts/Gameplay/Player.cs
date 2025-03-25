@@ -58,25 +58,30 @@ public class Player : MonoBehaviour
 
     public void PlayerMovement()
     {
+	    bool isMoving = false; 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             sr.flipX = false;
-            SetAnim(animSide, moveLeft);   
+            SetAnim(animSide, moveLeft);
+            isMoving = true;
         }
-        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             SetAnim(animUp, moveUp);
+            isMoving = true;
         }
-        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             SetAnim(animDown, moveDown);
+            isMoving = true;
         }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             sr.flipX = true;
-            SetAnim(animSide, moveRight);   
+            SetAnim(animSide, moveRight);
+            isMoving = true;
         }
-        else
+        if (!isMoving)
         {
             SetAnim(animIdle, moveIdle);
         }

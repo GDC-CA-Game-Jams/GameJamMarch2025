@@ -83,6 +83,7 @@ namespace Util.Services
 
             if (services.ContainsKey(key))
             {
+                services[key].Dispose();
                 services.Remove(key);
             }
             else

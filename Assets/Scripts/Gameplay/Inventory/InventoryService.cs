@@ -21,10 +21,11 @@ namespace Gameplay.Inventory
             es.Add(EventNames.INVENTORY_REMOVE_FOOD, OnDropFood());
         }
 
-        ~InventoryService()
+        public void Dispose()
         {
             es.Remove(EventNames.INVENTORY_ADD_FOOD, OnPickupFood());
             es.Remove(EventNames.INVENTORY_REMOVE_FOOD, OnDropFood());
+            Debug.Log($"[{GetType().Name}] Destroying Inventory Service!");
         }
         
         private EventHandler OnPickupFood()
