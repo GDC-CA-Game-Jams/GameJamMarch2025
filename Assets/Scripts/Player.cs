@@ -1,14 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    float speed = 2f;
+    public float speed = 2f;
 	Vector3 moveLeft = new Vector3(-1,0,0);
 	Vector3 moveRight = new Vector3(1,0,0);
 	Vector3 moveUp = new Vector3(0,1,0);
 	Vector3 moveDown = new Vector3(0,-1,0);
+    Vector3 moveIdle = new Vector3(0, 0, 0);
 	Vector3 fullScreenTopAndLeftEdges;
     Vector3 fullScreenBottomAndRightEdges;
+	Vector3 currentMovement;
+	string currentAnimation;
+	string newAnimation;
+	string animUp = "WalkUp";
+	string animDown = "WalkDown";
+	string animSide = "WalkLeftRight";
+    string animIdle = "Idle";
+	SpriteRenderer sr;
 
 	Animator animator;
 	public void Start()
@@ -21,52 +32,17 @@ public class Player : MonoBehaviour
                                                                                                           //but i want the upper left corner which is x coord 0
                                                                                                           //bottom left corner is (0,0) (x,y)
                                                                                                           //top right is pixelWidth, pixelHeight (x,y)
-	}
+		sr = gameObject.GetComponent<SpriteRenderer>();
+        //animator = gameObject.GetComponent<Animator>();
+		currentAnimation = animIdle;
+        //animator.Play(currentAnimation);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
-		if (Input.GetKey (KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
-			transform.position += moveLeft * Time.deltaTime*speed; //x,y,z
-			sr.flipX = false;
-			animator.SetBool ("WalkLeftRight", true);
-			animator.SetBool ("WalkUp", false);
-			animator.SetBool ("WalkDown", false);
-		}
-
-		if (Input.GetKey (KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) {
-			transform.position += moveUp * Time.deltaTime*speed; //x,y,z
-			animator.SetBool ("WalkUp", true);
-			animator.SetBool ("WalkLeftRight", false);
-			animator.SetBool ("WalkDown", false);
-		}
-
-		if (Input.GetKey (KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
-			transform.position += moveDown * Time.deltaTime*speed; //x,y,z
-			animator.SetBool ("WalkDown", true);
-			animator.SetBool ("WalkLeftRight", false);
-			animator.SetBool ("WalkUp", false);
-		}
-
-		if (Input.GetKey (KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
-			transform.position += moveRight * Time.deltaTime*speed; //x,y,z
-			sr.flipX = true;
-			animator.SetBool ("WalkLeftRight", true);
-			animator.SetBool ("WalkUp", false);
-			animator.SetBool ("WalkDown", false);
-		}
-		//if the player is not moving
-		if(!(Input.GetKey(KeyCode.W))&&!(Input.GetKey(KeyCode.A))&&!(Input.GetKey(KeyCode.S))&&!(Input.GetKey(KeyCode.D)))
-		{
-			if(!(Input.GetKey(KeyCode.UpArrow))&&!(Input.GetKey(KeyCode.LeftArrow))&&!(Input.GetKey(KeyCode.DownArrow))&&!(Input.GetKey(KeyCode.RightArrow))){
-			animator.SetBool ("WalkLeftRight", false);
-			animator.SetBool ("WalkUp", false);
-			animator.SetBool ("WalkDown", false);
-			}
-		}
+		PlayerMovement();
 		StayInBoundaries();
-			
     }
 
 	public void StayInBoundaries()
@@ -78,5 +54,57 @@ public class Player : MonoBehaviour
         if (temp.y < fullScreenBottomAndRightEdges.y) { temp.y = fullScreenBottomAndRightEdges.y; }
         if (temp.x > fullScreenBottomAndRightEdges.x) { temp.x = fullScreenBottomAndRightEdges.x; }
         transform.position = temp;
+    }
+
+    public void PlayerMovement()
+    {
+	    bool isMoving = false; 
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            sr.flipX = false;
+            SetAnim(animSide, moveLeft);
+            isMoving = true;
+        }
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
+            SetAnim(animUp, moveUp);
+            isMoving = true;
+        }
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            SetAnim(animDown, moveDown);
+            isMoving = true;
+        }
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            sr.flipX = true;
+            SetAnim(animSide, moveRight);
+            isMoving = true;
+        }
+        if (!isMoving)
+        {
+            SetAnim(animIdle, moveIdle);
+        }
+
+        Move();
+    }
+
+	public void Move()
+	{
+        transform.position += currentMovement * Time.deltaTime * speed; //x,y,z
+    }
+
+    public void SetAnim(string anim, Vector3 move)
+    {
+        newAnimation = anim;
+        currentMovement = move;
+
+        if (currentAnimation != newAnimation)
+        {
+            //animator.Play(newAnimation);
+            animator.SetBool(newAnimation, true);
+            animator.SetBool(currentAnimation, false);
+            currentAnimation = newAnimation;
+        }
     }
 }
