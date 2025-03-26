@@ -82,7 +82,7 @@ public class FireProjectile : MonoBehaviour
             float distance = Vector2.Distance(transform.position, player.transform.position);
 
             //checks if the player is within distance to fire
-            if (distance < playerdistance)
+            if (distance >= playerdistance)
             {
                 FireInterval();
             }
