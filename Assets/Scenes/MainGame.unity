@@ -218,7 +218,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.25, y: 0.25}
+    oldSize: {x: 0.16, y: 0.16}
     newSize: {x: 0.25, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -374,6 +374,153 @@ Transform:
   - {fileID: 2049509358}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &129712310
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.902
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.613
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854755153931921159, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: spawningFood
+      value: 
+      objectReference: {fileID: 11400000, guid: feeb4c7e7935a564e8e3e97dd3204180, type: 2}
+    - target: {fileID: 3706132614194274757, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_Name
+      value: FoodSpawner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226956077722224589, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2100571196, guid: d6cc8011b4fb7a749837087309b27e7f, type: 3}
+    - target: {fileID: 6226956077722224589, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226956077722224589, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976562863039755023, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3706132614194274757, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 129712312}
+  m_SourcePrefab: {fileID: 100100000, guid: 2e99137f09fa703469233f049334029e, type: 3}
+--- !u!1 &129712311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3706132614194274757, guid: 2e99137f09fa703469233f049334029e, type: 3}
+  m_PrefabInstance: {fileID: 129712310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &129712312
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129712311}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.003072381, y: 0.016682863}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.25, y: 0.25}
+    newSize: {x: 0.25, y: 0.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.20698619, y: 0.04230666}
+  m_EdgeRadius: 0
 --- !u!1 &177954489 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3122855299708223288, guid: 160c3842b018ec540a14c7775f307af7, type: 3}
@@ -620,7 +767,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.25, y: 0.25}
+    oldSize: {x: 0.16, y: 0.16}
     newSize: {x: 0.25, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -924,6 +1071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoodSpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6226956077722224589, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1759563425, guid: 46724789d320bca438d27ea3e7f45797, type: 3}
     - target: {fileID: 6226956077722224589, guid: 2e99137f09fa703469233f049334029e, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -1314,7 +1465,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.25, y: 0.25}
+    oldSize: {x: 0.16, y: 0.16}
     newSize: {x: 0.25, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6240,6 +6391,10 @@ PrefabInstance:
       value: FoodSpawner (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6226956077722224589, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1607275257, guid: 46724789d320bca438d27ea3e7f45797, type: 3}
+    - target: {fileID: 6226956077722224589, guid: 2e99137f09fa703469233f049334029e, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
@@ -9915,6 +10070,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.523
       objectReference: {fileID: 0}
@@ -9953,6 +10120,10 @@ PrefabInstance:
     - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 766625797447975060, guid: 2e99137f09fa703469233f049334029e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1854755153931921159, guid: 2e99137f09fa703469233f049334029e, type: 3}
       propertyPath: spawningFood
@@ -9994,6 +10165,7 @@ SceneRoots:
   - {fileID: 734075190}
   - {fileID: 6263762964187846717}
   - {fileID: 7051950038024521646}
+  - {fileID: 129712310}
   - {fileID: 1515945679}
   - {fileID: 6452197707793004836}
   - {fileID: 1768349645}

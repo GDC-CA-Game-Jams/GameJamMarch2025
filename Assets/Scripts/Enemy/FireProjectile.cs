@@ -59,7 +59,7 @@ public class FireProjectile : MonoBehaviour
             if (timer >= startTimer)
             {
                 startFire = true;
-                Fire();
+                FireStart();
             }
             else
             {
@@ -119,5 +119,17 @@ public class FireProjectile : MonoBehaviour
     {
         //adds the projectile to the game
         Instantiate(projectile, projectilePos.position, Quaternion.identity);
+    }
+
+    void StartDistance()
+    {
+        //figures out the distance between the player 
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+
+        //checks if the player is within distance to fire
+        if (distance >= playerdistance)
+        {
+            Fire();
+        }
     }
 }
