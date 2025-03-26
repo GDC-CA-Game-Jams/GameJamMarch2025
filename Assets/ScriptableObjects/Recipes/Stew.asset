@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stew
   m_EditorClassIdentifier: 
   ingredients:
-  - {fileID: 11400000, guid: 3efc437fd45e00945b2d99e292d10cd9, type: 2}
+  - {fileID: 11400000, guid: d3e10f25721f7ec44b8a902a37e5bbf2, type: 2}
   - {fileID: 11400000, guid: feeb4c7e7935a564e8e3e97dd3204180, type: 2}
   - {fileID: 11400000, guid: 035fd1b357250f2428cace97556329bf, type: 2}
   results:

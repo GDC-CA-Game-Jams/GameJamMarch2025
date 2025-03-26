@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e589e06ae011244a813e1f547ee7710, type: 3}
+  m_Name: MeatAndMash
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -9076572278067890504, guid: 5e8e0c3781ad00542bde3ff985f62928, type: 3}
+  controller: {fileID: 9100000, guid: e6d25285999e4f74a959924684a301e4, type: 2}
+  clip: {fileID: 7400000, guid: ac3a4f2c8d67db24f8541e6f26995b4d, type: 2}

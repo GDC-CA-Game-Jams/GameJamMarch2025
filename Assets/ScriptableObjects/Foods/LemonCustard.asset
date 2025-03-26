@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e589e06ae011244a813e1f547ee7710, type: 3}
+  m_Name: LemonCustard
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -8929005900783982930, guid: 788abc5af3fdee6449706909721dfda8, type: 3}
+  controller: {fileID: 9100000, guid: 3d9b01a14970e974188cefa3b563c55c, type: 2}
+  clip: {fileID: 7400000, guid: e23a53db790725042b8685ae0117bbf8, type: 2}
