@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
             SetAnim(animIdle);
         }
 
-        desiredMove = Vector3.ClampMagnitude(desiredMove, speed);
+        desiredMove = (Vector3.Normalize(desiredMove)) * speed;
         currentMovement = desiredMove;
 		
         Move(desiredMove);
