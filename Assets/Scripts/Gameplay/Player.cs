@@ -69,50 +69,57 @@ public class Player : MonoBehaviour
 
     public void PlayerMovement()
     {
-	    bool isMoving = false; 
+	    bool isMoving = false;
+	    Vector3 desiredMove = Vector3.zero;
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             sr.flipX = false;
-            SetAnim(animSide, moveLeft);
+            SetAnim(animSide);
+            desiredMove += moveLeft;
             isMoving = true;
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            SetAnim(animUp, moveUp);
+            SetAnim(animUp);
+            desiredMove += moveUp;
             isMoving = true;
         }
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            SetAnim(animDown, moveDown);
+            SetAnim(animDown);
+            desiredMove += moveDown;
             isMoving = true;
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             sr.flipX = true;
-            SetAnim(animSide, moveRight);
+            SetAnim(animSide);
+            desiredMove += moveRight;
             isMoving = true;
         }
         if (!isMoving)
         {
-            SetAnim(animIdle, moveIdle);
+            SetAnim(animIdle);
         }
 
-        //Move();
+        desiredMove = Vector3.ClampMagnitude(desiredMove, speed);
+        currentMovement = desiredMove;
+		
+        Move(desiredMove);
     }
 
-	public void Move()
+	public void Move(Vector3 move)
 	{
         //nextMovement = transform.position + currentMovement * Time.deltaTime * speed; //x,y,z
         //rigid.MovePosition(nextMovement);
         //transform.position += currentMovement * Time.deltaTime * speed; //x,y,z
         //transform.Translate += currentMovement * Time.deltaTime * speed; //x,y,z
-        rigid.MovePosition(new Vector2((transform.position.x + currentMovement.x * Time.deltaTime * speed), (transform.position.y + currentMovement.y * Time.deltaTime * speed)));
+        rigid.MovePosition(new Vector2((transform.position.x + move.x * Time.deltaTime * speed), (transform.position.y + move.y * Time.deltaTime * speed)));
     }
 
-    public void SetAnim(string anim, Vector3 move)
+    public void SetAnim(string anim)
     {
         newAnimation = anim;
-        currentMovement = move;
 
         if (currentAnimation != newAnimation)
         {

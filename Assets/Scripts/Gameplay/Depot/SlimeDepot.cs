@@ -9,6 +9,8 @@ namespace Gameplay.Depot
     {
         private FoodObject desiredFood;
 
+        [SerializeField] private Animator slimeAnim;
+        
         [SerializeField] private Animator desiredFoodAnim;
 
         protected override void Start()
@@ -23,6 +25,7 @@ namespace Gameplay.Depot
             {
                 es.Raise(EventNames.INVENTORY_REMOVE_FOOD, this, new InventoryChangeEventArgs(new []{desiredFood}, Enums.INVENTORY_ACTIONS.REMOVE_FOOD, true));
                 es.Raise(EventNames.SLIME_DESIRED_FOOD_SUCCESS, this, null);
+                slimeAnim.SetTrigger("Eat");
                 ChooseDesiredFood();
             }
         }

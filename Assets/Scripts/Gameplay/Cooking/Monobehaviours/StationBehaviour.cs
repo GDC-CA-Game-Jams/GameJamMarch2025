@@ -107,6 +107,9 @@ namespace Gameplay.Cooking.Monobehaviours
                 for (; i < foodArgs.heldFood.Count; ++i)
                 {
                     openSpots[i].GetComponent<SpriteRenderer>().sprite = foodArgs.heldFood[i].sprite;
+                    Animator anim = openSpots[i].GetComponent<Animator>();
+                    anim.runtimeAnimatorController = foodArgs.heldFood[i].controller;
+                    anim.Play(foodArgs.heldFood[i].clip.name);
                     openSpots[i].SetActive(true);
                 }
 

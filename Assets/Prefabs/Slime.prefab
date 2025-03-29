@@ -147,6 +147,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8dcff3109b0578d48994d71fa129d49b, type: 2}
   - {fileID: 11400000, guid: 979cfd25d16a1c84a8cacb6196959f0e, type: 2}
   - {fileID: 11400000, guid: 87d84c685c3d9fb42b689aa89dec4294, type: 2}
+  slimeAnim: {fileID: 4140539088704890529}
   desiredFoodAnim: {fileID: 6261441392521374506}
 --- !u!95 &4140539088704890529
 Animator:
