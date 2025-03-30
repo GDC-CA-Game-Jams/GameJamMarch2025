@@ -20,9 +20,14 @@ namespace Gameplay.Cooking.Monobehaviours
         public StationObject StationData => stationData;
 
         protected bool playerInRange = false;
-        
+
+        private AudioSource audioSource;
+
+        public AudioClip playerdropoff;
+
         protected virtual void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             es = ServicesLocator.Instance.Get<EventService>();
             es.Raise(EventNames.STATION_REGISTRATION_EVENT, this, new StationRegistrationEventArgs(stationData, openSpots.Length));
             es.Add(EventNames.STATION_UPDATE_FOOD_EVENT, OnShowHeldFood());
@@ -64,6 +69,7 @@ namespace Gameplay.Cooking.Monobehaviours
             {
                 Debug.Log($"[{GetType().Name}] Activating Station {id}");
                 es.Raise(EventNames.STATION_ACTIVATED_EVENT, this, new StationActivationEventArgs(id));
+                audioSource.PlayOneShot(playerdropoff);
             }
         }
         
