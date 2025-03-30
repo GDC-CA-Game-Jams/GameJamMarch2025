@@ -13,5 +13,6 @@
         public static string INVENTORY_REMOVE_SUCESS = "OnPlayerInventoryRemoveSuccess";
 
         public static string SLIME_DESIRED_FOOD_SUCCESS = "OnPlayerDeliverSlimeDesiredFood";
+        public static string SLIME_NEW_DESIRED_FOOD = "OnSlimePickNewDesiredFood";
     }
 }

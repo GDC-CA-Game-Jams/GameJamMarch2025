@@ -1,4 +1,5 @@
-﻿using Gameplay.Cooking.ScriptableObjects;
+﻿using Gameplay.Cooking;
+using Gameplay.Cooking.ScriptableObjects;
 using Gameplay.Inventory;
 using UnityEngine;
 using Util;
@@ -36,6 +37,7 @@ namespace Gameplay.Depot
             desiredFood = validFoods[random];
             desiredFoodAnim.runtimeAnimatorController = desiredFood.controller;
             desiredFoodAnim.Play(desiredFood.clip.name);
+            es.Raise(EventNames.SLIME_NEW_DESIRED_FOOD, this, new FoodObjectEventArgs(desiredFood));
         }
     }
 }
