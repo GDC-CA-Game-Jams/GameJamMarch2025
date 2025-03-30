@@ -767,6 +767,7 @@ MonoBehaviour:
   startTimer: 0
   fireInterval: 5
   playerdistance: 0.7
+  slimeFireSound: {fileID: 8300000, guid: 63be163b59ffbd947a97f48ffdf57c52, type: 3}
 --- !u!4 &399180603 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5849673323791824653, guid: 9b4b2e7cdaf8c28448090f14f0239dba, type: 3}
