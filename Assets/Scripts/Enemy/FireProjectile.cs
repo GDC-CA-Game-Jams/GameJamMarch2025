@@ -34,8 +34,16 @@ public class FireProjectile : MonoBehaviour
     //used to track how much time has passed before enemy can start firing projectiles
     private float timer = 0;
 
+    private AudioSource audioSource;
+
+    //audio clip for when slime fires projectile. Set in inspector.
+    public AudioClip slimeFireSound;
+
     void Start()
     {
+
+        audioSource = GetComponent<AudioSource>();
+
         //Once the enemy spawns in, it gets access to the player GameObject through its tag set in Unity
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -119,6 +127,8 @@ public class FireProjectile : MonoBehaviour
     {
         //adds the projectile to the game
         Instantiate(projectile, projectilePos.position, Quaternion.identity);
+        //play sound
+        audioSource.PlayOneShot(slimeFireSound);
     }
 
     void StartDistance()

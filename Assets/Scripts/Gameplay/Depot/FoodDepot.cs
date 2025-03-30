@@ -16,9 +16,14 @@ namespace Gameplay.Depot
         protected InventoryService invService;
 
         private bool playerInRange = false;
-        
+
+        private AudioSource audioSource;
+
+        public AudioClip potSound;
+
         protected virtual void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             es = ServicesLocator.Instance.Get<EventService>();
             invService = ServicesLocator.Instance.Get<InventoryService>();
         }
@@ -44,6 +49,7 @@ namespace Gameplay.Depot
 
         protected virtual void ActivateDepot()
         {
+            audioSource.PlayOneShot(potSound);
             foreach (var food in validFoods)
             {
                 if (invService.HasFood(food))
