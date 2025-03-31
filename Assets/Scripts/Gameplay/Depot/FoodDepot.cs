@@ -17,7 +17,7 @@ namespace Gameplay.Depot
 
         private bool playerInRange = false;
 
-        private AudioSource audioSource;
+        protected AudioSource audioSource;
 
         public AudioClip potSound;
 

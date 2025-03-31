@@ -10,7 +10,6 @@ namespace Gameplay.Depot
     {
         private FoodObject desiredFood;
 
-        private AudioSource audioSource;
 
         public AudioClip slimeEatSound;
 
@@ -21,7 +20,6 @@ namespace Gameplay.Depot
         protected override void Start()
         {
             base.Start();
-            audioSource = GetComponent<AudioSource>();
             ChooseDesiredFood();
         }
         
