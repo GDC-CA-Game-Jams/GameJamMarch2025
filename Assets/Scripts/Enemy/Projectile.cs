@@ -17,6 +17,8 @@ public class Projectile : MonoBehaviour
 
     public float damage = 3;
 
+    public AudioClip playerHitSound;
+
     //Script Only Variables
     private Rigidbody2D rb;
 
@@ -26,11 +28,15 @@ public class Projectile : MonoBehaviour
     
     private float dtimer = 0;
 
+    private AudioSource audioSource;
+
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         gameTimer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
 
@@ -86,6 +92,9 @@ public class Projectile : MonoBehaviour
         //checks to see if what the projectile is colliding with is actually the player
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("player hit");
+            //play sound
+            audioSource.PlayOneShot(playerHitSound);
             //still needs line of code that accesses player timer
             gameTimer.Damage(damage);
             //destroys projectile
