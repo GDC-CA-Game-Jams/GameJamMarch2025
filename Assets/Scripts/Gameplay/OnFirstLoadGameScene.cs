@@ -14,6 +14,8 @@ namespace Gameplay
         private void Awake()
         {
             // TODO: Find a better spot for this
+            ServicesLocator.Instance.Register(new GameManager());
+            
             ServicesLocator.Instance.Register(new InventoryService());
             ServicesLocator.Instance.Get<InventoryService>().Init();
             

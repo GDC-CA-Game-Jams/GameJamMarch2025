@@ -31,6 +31,7 @@ namespace Gameplay
             return (sender, args) =>
             {
                 score += scorePerFood;
+                ServicesLocator.Instance.Get<GameManager>().SetScore(score);
                 scoreText.text = score.ToString();
             };
         }
