@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5849673323791824653}
+  - component: {fileID: 8551536032038481687}
+  - component: {fileID: 4140539088704890529}
   - component: {fileID: 4654382224317063823}
   - component: {fileID: 3696407928807256487}
   - component: {fileID: 88694318601808904}
-  - component: {fileID: 4140539088704890529}
-  - component: {fileID: 8551536032038481687}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -37,6 +37,40 @@ Transform:
   - {fileID: 5628720732717412249}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &8551536032038481687
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601392326496650464}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_SortAtRoot: 0
+--- !u!95 &4140539088704890529
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601392326496650464}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cef4aae482bb845499585f09a1a6ef36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &4654382224317063823
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -147,42 +181,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8dcff3109b0578d48994d71fa129d49b, type: 2}
   - {fileID: 11400000, guid: 979cfd25d16a1c84a8cacb6196959f0e, type: 2}
   - {fileID: 11400000, guid: 87d84c685c3d9fb42b689aa89dec4294, type: 2}
+  potSound: {fileID: 0}
+  slimeEatSound: {fileID: 0}
   slimeAnim: {fileID: 4140539088704890529}
   desiredFoodAnim: {fileID: 6261441392521374506}
---- !u!95 &4140539088704890529
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3601392326496650464}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cef4aae482bb845499585f09a1a6ef36, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!210 &8551536032038481687
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3601392326496650464}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_SortAtRoot: 0
 --- !u!1 &5062963289631611013
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         PlayerMovement();
-        rigid.MovePosition(new Vector2((transform.position.x + currentMovement.x * Time.deltaTime * speed), (transform.position.y + currentMovement.y * Time.deltaTime * speed)));
+        //rigid.MovePosition(new Vector2((transform.position.x + currentMovement.x * Time.deltaTime * speed), (transform.position.y + currentMovement.y * Time.deltaTime * speed)));
     }
 
 	public void StayInBoundaries()
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
         }
 
         desiredMove = (Vector3.Normalize(desiredMove)) * speed;
-        currentMovement = desiredMove;
+        //currentMovement = desiredMove;
 		
         Move(desiredMove);
     }
