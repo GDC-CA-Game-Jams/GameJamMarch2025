@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     //Inspector Variables
     public GameObject player;
 
+    public Animator playerAnim;
+
     public Timer gameTimer;
 
     public float force;
@@ -44,6 +46,7 @@ public class Projectile : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         gameTimer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
         anim = GetComponent<Animator>();
+        playerAnim = player.GetComponent<Animator>();
 
         FindPlayer();
 
@@ -109,6 +112,8 @@ public class Projectile : MonoBehaviour
 
             //stops projectile movement
             rb.linearVelocity = Vector3.zero;
+
+            playerAnim.Play("Hit");
 
             //plays destroy animation
             anim.Play(dead);

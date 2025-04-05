@@ -67,7 +67,7 @@ public class FireProjectile : MonoBehaviour
             if (timer >= startTimer)
             {
                 startFire = true;
-                FireStart();
+                StartDistance();
             }
             else
             {
