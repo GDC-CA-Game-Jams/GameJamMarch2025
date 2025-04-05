@@ -30,6 +30,10 @@ public class Projectile : MonoBehaviour
 
     private AudioSource audioSource;
 
+    private string dead = "Destroy";
+
+    Animator anim;
+
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,6 +43,7 @@ public class Projectile : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         gameTimer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+        anim = GetComponent<Animator>();
 
         FindPlayer();
 
@@ -60,7 +65,9 @@ public class Projectile : MonoBehaviour
         dtimer += Time.deltaTime;
         if (dtimer > destroy)
         {
-            Destroy(gameObject);
+            rb.linearVelocity = Vector3.zero;
+            anim.Play(dead);
+            //Destroy(gameObject);
         }
     }
 
@@ -92,13 +99,27 @@ public class Projectile : MonoBehaviour
         //checks to see if what the projectile is colliding with is actually the player
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("player hit");
+            //Debug.Log("player hit");
+
             //play sound
             audioSource.PlayOneShot(playerHitSound);
-            //still needs line of code that accesses player timer
+
+            //decreasing the time remaining
             gameTimer.Damage(damage);
+
+            //stops projectile movement
+            rb.linearVelocity = Vector3.zero;
+
+            //plays destroy animation
+            anim.Play(dead);
+
             //destroys projectile
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
+    }
+
+    void OnDestroyAnimationFinish()
+    {
+        Destroy(gameObject);
     }
 }

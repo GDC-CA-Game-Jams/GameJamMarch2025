@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigid;
 
 	Animator animator;
+
 	public void Start()
 	{
 		animator = GetComponent<Animator>();
