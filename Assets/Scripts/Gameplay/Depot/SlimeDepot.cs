@@ -19,6 +19,7 @@ namespace Gameplay.Depot
 
         protected override void Start()
         {
+            slimeAnim = GetComponent<Animator>();
             base.Start();
             ChooseDesiredFood();
         }
@@ -29,7 +30,8 @@ namespace Gameplay.Depot
             {
                 es.Raise(EventNames.INVENTORY_REMOVE_FOOD, this, new InventoryChangeEventArgs(new []{desiredFood}, Enums.INVENTORY_ACTIONS.REMOVE_FOOD, true));
                 es.Raise(EventNames.SLIME_DESIRED_FOOD_SUCCESS, this, null);
-                slimeAnim.SetTrigger("Eat");
+                //slimeAnim.SetTrigger("Eat");
+                slimeAnim.Play("SlimeEats");
                 audioSource.PlayOneShot(slimeEatSound);
                 ChooseDesiredFood();
             }
