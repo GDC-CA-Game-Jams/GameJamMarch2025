@@ -154,6 +154,11 @@ public class Patrol : MonoBehaviour
     {
         newAnimation = animator;
 
+        if (eating)
+        {
+            return;
+        }
+
         if (currentAnimation != newAnimation)
         {
             //animator.Play(newAnimation);
