@@ -6,6 +6,7 @@ public class Patrol : MonoBehaviour
     public float speed = 2f;
     public float patrolDistance = 0.5f;
     public float movementRange = 0.105f;
+    public float eatingTime = 2f;
 
     //Enemy Movement
     Vector3 moveLeft = new Vector3(-1, 0, 0);
@@ -25,21 +26,47 @@ public class Patrol : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sr;
+    private bool eating = false;
+    private float eatTimer = 0f;
+    private float savedSpeed;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        savedSpeed = speed;
 
         GetPatrolPoint();
 
         anim.SetBool("IsRunning", true);
     }
 
+    void Update()
+    {
+        if (eating == true)
+        {
+            eatTimer += Time.deltaTime;
+            if (eatTimer >= eatingTime)
+            {
+                speed = savedSpeed;
+                eatTimer = 0;
+                eating = false;
+            }
+        }
+    }
+
     void FixedUpdate()
     {
-        EnemyMovement();
+        if (eating != true)
+        {
+            EnemyMovement();
+        }
+        else
+        {
+            rb.linearVelocity = Vector3.zero;
+        }
+        
     }
 
     void EnemyMovement()
@@ -134,5 +161,13 @@ public class Patrol : MonoBehaviour
             anim.SetBool(currentAnimation, false);
             currentAnimation = newAnimation;
         }
+    }
+
+    public void Eating()
+    {
+        speed = 0;
+        eating = true;
+
+        //SetAnim("SlimeEats");
     }
 }

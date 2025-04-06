@@ -13,8 +13,10 @@ namespace Gameplay.Depot
 
         public AudioClip slimeEatSound;
 
-        [SerializeField] private Animator slimeAnim;
-        
+        public Patrol patrol;
+
+        Animator slimeAnim;
+
         [SerializeField] private Animator desiredFoodAnim;
 
         protected override void Start()
@@ -31,7 +33,9 @@ namespace Gameplay.Depot
                 es.Raise(EventNames.INVENTORY_REMOVE_FOOD, this, new InventoryChangeEventArgs(new []{desiredFood}, Enums.INVENTORY_ACTIONS.REMOVE_FOOD, true));
                 es.Raise(EventNames.SLIME_DESIRED_FOOD_SUCCESS, this, null);
                 //slimeAnim.SetTrigger("Eat");
-                slimeAnim.Play("SlimeEats");
+                slimeAnim.Play("Eat");
+                
+                patrol.Eating();
                 audioSource.PlayOneShot(slimeEatSound);
                 ChooseDesiredFood();
             }
@@ -44,6 +48,12 @@ namespace Gameplay.Depot
             desiredFoodAnim.runtimeAnimatorController = desiredFood.controller;
             desiredFoodAnim.Play(desiredFood.clip.name);
             es.Raise(EventNames.SLIME_NEW_DESIRED_FOOD, this, new FoodObjectEventArgs(desiredFood));
+        }
+
+        public void SlimeFinishesEating()
+        {
+            print("Slime Ate The Food");
+
         }
     }
 }
