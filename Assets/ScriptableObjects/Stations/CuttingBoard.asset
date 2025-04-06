@@ -12,7 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfe67da4d4ac804ab8e4b40c4124a13, type: 3}
   m_Name: CuttingBoard
   m_EditorClassIdentifier: 
-  recipes:
-  - {fileID: 11400000, guid: 6f733cb39d7238c4e9789299d4278a84, type: 2}
-  - {fileID: 11400000, guid: b38f0233d093a0547b940eec44dd6cf9, type: 2}
-  - {fileID: 11400000, guid: cc0e7d9f5728000498a8fd3da035f57c, type: 2}
+  recipes: []
