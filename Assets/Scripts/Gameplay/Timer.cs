@@ -1,4 +1,5 @@
 using System;
+using Gameplay.Cooking;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -50,7 +51,15 @@ public class Timer : MonoBehaviour
     {
         return (sender, args) =>
         {
-            remainingTime += correctFoodTimeGain;
+            FoodObjectEventArgs foodObjectEventArgs = args as FoodObjectEventArgs;
+
+            if (foodObjectEventArgs is null)
+            {
+                Debug.LogError($"{GetType().Name} Failed to cast to FoodObjectEventArgs, failing to add time!");
+                return;
+            }
+            
+            remainingTime += foodObjectEventArgs.food.TimeGained;
         };
     }
 

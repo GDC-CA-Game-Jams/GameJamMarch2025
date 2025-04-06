@@ -15,3 +15,5 @@ MonoBehaviour:
   sprite: {fileID: -8929005900783982930, guid: 788abc5af3fdee6449706909721dfda8, type: 3}
   controller: {fileID: 9100000, guid: 3d9b01a14970e974188cefa3b563c55c, type: 2}
   clip: {fileID: 7400000, guid: e23a53db790725042b8685ae0117bbf8, type: 2}
+  pointsGained: 1
+  timeGained: 6

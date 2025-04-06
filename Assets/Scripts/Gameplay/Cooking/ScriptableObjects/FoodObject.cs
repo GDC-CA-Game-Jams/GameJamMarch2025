@@ -13,5 +13,13 @@ namespace Gameplay.Cooking.ScriptableObjects
         public RuntimeAnimatorController controller;
         
         public AnimationClip clip;
+        
+        [SerializeField] private int pointsGained = 1;
+
+        [SerializeField] private int timeGained;
+        
+        public int PointsGained => pointsGained;
+
+        public int TimeGained => timeGained;
     }
 }

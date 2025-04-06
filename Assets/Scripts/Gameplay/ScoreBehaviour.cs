@@ -1,4 +1,5 @@
 ﻿using System;
+using Gameplay.Cooking;
 using TMPro;
 using UnityEngine;
 using Util;
@@ -30,7 +31,15 @@ namespace Gameplay
         {
             return (sender, args) =>
             {
-                score += scorePerFood;
+                FoodObjectEventArgs foodObjectEventArgs = args as FoodObjectEventArgs;
+
+                if (foodObjectEventArgs is null)
+                {
+                    Debug.LogError($"{GetType().Name} Failed to cast to RecipieEventArgs, how did this happen? Failing!");
+                    return;
+                }
+
+                score += foodObjectEventArgs.food.PointsGained;
                 ServicesLocator.Instance.Get<GameManager>().SetScore(score);
                 scoreText.text = score.ToString();
             };
