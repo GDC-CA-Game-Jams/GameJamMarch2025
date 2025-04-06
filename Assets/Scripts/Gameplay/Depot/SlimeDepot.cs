@@ -31,9 +31,11 @@ namespace Gameplay.Depot
             if (invService.HasFood(desiredFood))
             {
                 es.Raise(EventNames.INVENTORY_REMOVE_FOOD, this, new InventoryChangeEventArgs(new []{desiredFood}, Enums.INVENTORY_ACTIONS.REMOVE_FOOD, true));
+
                 es.Raise(EventNames.SLIME_DESIRED_FOOD_SUCCESS, this, new FoodObjectEventArgs(desiredFood));
-                //slimeAnim.SetTrigger("Eat");
-                slimeAnim.Play("Idle");
+
+                slimeAnim.SetTrigger("Eat");
+
                 
                 patrol.Eating();
                 audioSource.PlayOneShot(slimeEatSound);
