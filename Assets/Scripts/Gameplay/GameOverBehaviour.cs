@@ -37,7 +37,7 @@ namespace Gameplay
                 reviewText.text = badReviews[Random.Range(0, badReviews.Length - 1)];
             }
 
-            scoreText.text = score.ToString();
+            scoreText.text = $"Score: {score.ToString()}";
         }
 
         private void OnDestroy()
